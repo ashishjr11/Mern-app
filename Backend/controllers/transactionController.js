@@ -86,7 +86,7 @@ const initializeDB = async (req, res) => {
     const response = await axios.get('https://s3.amazonaws.com/roxiler.com/product_transaction.json');
     const data = response.json();
 
-    await Transaction.deleteMany({}); // Clear existing data
+    await Transaction.deleteMany({}); 
 
     for (const item of data) {
       const transaction = new Transaction({
